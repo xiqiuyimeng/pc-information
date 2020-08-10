@@ -1,0 +1,5 @@
+﻿<RCC>
+    <qresource prefix="/">
+        <file alias="window.jpg">window.jpg</file>
+    </qresource>
+</RCC>

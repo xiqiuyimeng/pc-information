@@ -11,6 +11,7 @@ import time
 import psutil
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import QThread, pyqtSignal
+import image_rc
 
 
 class Ui_widget(QtWidgets.QWidget):
@@ -138,8 +139,7 @@ class Ui_widget(QtWidgets.QWidget):
         self.setWindowOpacity(0.95)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
-        self.setStyleSheet("#frame{border-style:solid;border-radius:30px;background-color:qlineargradient(x1:0, y1:0, x2:1, y2:0, "
-                           "stop:0 Wheat,stop:1 lightyellow);}"
+        self.setStyleSheet("#frame{border-style:solid;border-radius:30px;border-image:url(:/window.jpg);}"
                            "QLabel{font-size:19px;font-family:楷体;font-weight:300;qproperty-wordWrap:true;}"
                            "#desc{font-size:16px;}"
                            "#title{font-size:25px;qproperty-alignment:AlignHCenter;}"
