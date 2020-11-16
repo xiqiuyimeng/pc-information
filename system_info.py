@@ -8,6 +8,7 @@ _date_ = '2018/7/22 23:53'
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    ui = systemInfo.Ui_widget()
+    screen_rect = QtWidgets.QApplication.desktop().screenGeometry()
+    ui = systemInfo.SystemInfoUI(screen_rect)
     ui.show()
     sys.exit(app.exec_())

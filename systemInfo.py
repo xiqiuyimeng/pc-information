@@ -14,15 +14,16 @@ from PyQt5.QtCore import QThread, pyqtSignal
 import image_rc
 
 
-class Ui_widget(QtWidgets.QWidget):
+class SystemInfoUI(QtWidgets.QWidget):
 
-    def __init__(self):
-        super(Ui_widget, self).__init__()
-        self.setupUi()
+    def __init__(self, screen_rect):
+        super().__init__()
+        self.desktop_screen_rect = screen_rect
+        self.setup_ui()
 
-    def setupUi(self):
+    def setup_ui(self):
         self.setObjectName("widget")
-        self.resize(500, 450)
+        self.resize(self.desktop_screen_rect.width() * 0.25, self.desktop_screen_rect.height() * 0.4)
         self.verticalLayout = QtWidgets.QVBoxLayout(self)
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(self)
@@ -140,15 +141,15 @@ class Ui_widget(QtWidgets.QWidget):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
         self.setStyleSheet("#frame{border-style:solid;border-radius:30px;border-image:url(:/window.jpg);}"
-                           "QLabel{font-size:19px;font-family:楷体;font-weight:300;qproperty-wordWrap:true;}"
-                           "#desc{font-size:16px;}"
-                           "#title{font-size:25px;qproperty-alignment:AlignHCenter;}"
-                           "QPushButton{font-size:20px;font-family:楷体;font-weight:500px;color:black;"
+                           "QLabel{font-size:14pt;font-family:楷体;font-weight:300;qproperty-wordWrap:true;}"
+                           "#desc{font-size:13pt;}"
+                           "#title{font-size:20pt;qproperty-alignment:AlignHCenter;}"
+                           "QPushButton{font-size:14.5pt;font-family:楷体;color:black;"
                            "background-color:qlineargradient(x1:0, y1:0, x2:1, y2:0, "
-                           "stop:0 lightgreen,stop:1 SpringGreen);border-radius:8px;border-style:outset;border-width:2px;"
+                           "stop:0 lightgreen,stop:1 SpringGreen);border-radius:8px;border-read_qrc:outset;border-width:2px;"
                            "border-color:Thistle;padding-top:1px;padding-left:1px;padding-bottom:3px;padding-right:3px;}"
                            "QPushButton:hover{background-color:LimeGreen;}"
-                           "QPushButton:pressed{background-color:green;border-style:inset;padding-top:3px;"
+                           "QPushButton:pressed{background-color:green;border-read_qrc:inset;padding-top:3px;"
                            "padding-left:3px}")
 
         self.retranslateUi()
